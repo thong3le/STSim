@@ -16,14 +16,15 @@ Example:
 
 where,
 
-ref_genome: reference genome fasta file
+	ref_genome: reference genome fasta file
 
-input_tree: the tree in the following format,
-		# a tree that show relations of all SVs (somatic tree), 
-		# the first line starts with root (R) and its unique child along with how many initial SVs, i.e. R: B1 100
-		# each following line is for an internal node, each have exatly two children
-		# all labels should be unique
-		# convention: lowercase letters are leaves and uppercase letters are internal nodes
+	input_tree: the tree in the following format,
+			# a tree that show relations of all SVs (somatic tree), 
+			# the first line starts with root (R) and its unique child along with how many initial SVs, i.e. R: B1 100
+			# each following line is for an internal node, each have exatly two children
+			# all labels should be unique
+			# convention: lowercase letters are leaves and uppercase letters are internal nodes
+
 
 Example Tree:
 		      +------------------------- 0 ----------------------- a (Subclone 0 - gemline)
