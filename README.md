@@ -9,18 +9,18 @@ Somatic Tree Simulation:  Simulation for high-throughput sequencing (HTS) data f
 
 Running Script:
 ===============
-	
-		./run_simulation ref_genome input_tree output_folder
+```	
+./run_simulation ref_genome input_tree output_folder
+```
 
-
-	The output files are bam files and positions of SVs.
+The output files are bam files and positions of SVs.
 
 Example:
 ========
-
-	./run_simulation /share/hormozdiarilab/Data/ReferenceGenomes/Hg38/hg38.fa input.txt
-
-    where,
+```
+./run_simulation /share/hormozdiarilab/Data/ReferenceGenomes/Hg38/hg38.fa input.txt
+```
+where,
 
 	ref_genome: reference genome fasta file
 
