@@ -1,20 +1,26 @@
 # STSim
 Somatic Tree Simulation:  Simulation for high-throughput sequencing (HTS) data for somatic mutations
 
+## Prerequisites
+
+* [wgsim](https://github.com/lh3/wgsim) 
+* [bwa](https://github.com/lh3/bwa) 
+* [samtools](https://github.com/samtools/) 
+
 Running Script:
 ===============
 	
 		./run_simulation ref_genome input_tree output_folder
 
 
-The output files are bam files and positions of SVs.
+	The output files are bam files and positions of SVs.
 
 Example:
 ========
 
 	./run_simulation /share/hormozdiarilab/Data/ReferenceGenomes/Hg38/hg38.fa input.txt
 
-where,
+    where,
 
 	ref_genome: reference genome fasta file
 
@@ -26,34 +32,36 @@ where,
 			# convention: lowercase letters are leaves and uppercase letters are internal nodes
 
 
-Example Tree:
-		      +------------------------- 0 ----------------------- a (Subclone 0 - gemline)
-                      |
-                      |
-R -------- 100 -------B1
-                      |                     +-------------- 0 ------------ b (subclone 1 - somatic)
-                      |                     |
-                      |                     |
-                      +------- 100 ---------B2
-                                            |
-                                            |              +----- 0 ------ c (subclone 2)
-                                            |              |  
-                                            +----- 100 ----B3
-                                                           |
-      							   +---- 100 ----- d (subclone 3)
+Example Input Tree:
+===================
+
+			      +------------------------- 0 ----------------------- a (Subclone 0 - gemline)
+	                      |
+	                      |
+	R -------- 100 -------B1
+	                      |                     +-------------- 0 ------------ b (subclone 1 - somatic)
+	                      |                     |
+	                      |                     |
+	                      +------- 100 ---------B2
+	                                            |
+	                                            |              +----- 0 ------ c (subclone 2)
+	                                            |              |  
+	                                            +----- 100 ----B3
+	                                                           |
+	      							   +---- 100 ----- d (subclone 3)
 
 
-Then, the input file looks like following
+	Then, the input file looks like following
 
-input.txt
-+-----------------------------------+
-|	     			    |
-|   R: B1 100                       |
-|   B1: a 0 B2 100                  |
-|   B2: b 0 B3 100                  |
-|   B3: c 0 d 100	            |
-|                                   |
-+-----------------------------------+
+	input.txt
+	+-----------------------------------+
+	|	     			    |
+	|   R: B1 100                       |
+	|   B1: a 0 B2 100                  |
+	|   B2: b 0 B3 100                  |
+	|   B3: c 0 d 100	            |
+	|                                   |
+	+-----------------------------------+
 
 
 
